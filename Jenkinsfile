@@ -1,11 +1,27 @@
-pipeline {  
-    agent any  
-        stages {  
-       	    stage("git_checkout") {  
-           	    steps {  
-              	    echo "cloning repository" 
-              	    echo "repo cloned successfully"  
-              	    }  
-         	    } 
+pipeline {
+    agant any
+    
+    stages {
+        stage ('compile stage') {
+            steps {
+                withMaven(maven : 'Maven') {
+                    sh 'mvn clean compile'
+                }
+            }
         }
+        stage ('testing Stage') {
+            steps {
+                withMaven(maven : 'Maven') {
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage (' Packaging stage ') {
+            steps {
+                withMaven(maven : 'Maven') {
+                    sh 'mvn package'
+                }
+            }
+        }
+    }
 }
