@@ -7,7 +7,6 @@ pipeline {
                 git credentialsId: 'KKK', url: 'https://github.com/loginkranthi/onlinebookstore'
                 }
             }
-        }
         stage ('compile') {
             steps {
                 withMaven(maven : 'Maven') {
