@@ -10,21 +10,21 @@ pipeline {
         stage ('compile') {
             steps {
                 withMaven(maven : 'Maven') {
-                    sh 'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
         }
         stage ('test') {
             steps {
                 withMaven(maven : 'Maven') {
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
         stage (' Package') {
             steps {
                 withMaven(maven : 'Maven') {
-                    sh 'mvn package'
+                    bat 'mvn package'
                 }
             }
         }
