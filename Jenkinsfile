@@ -29,7 +29,7 @@ pipeline {
         }
         stage ('Upload package to nexus') {
             steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'onlinebookstore', classifier: '', file: 'target/onlinebookstore.war', type: 'war']], credentialsId: 'nexus2', groupId: 'onlinebookstore', nexusUrl: 'localhost:8081/', nexusVersion: 'nexus2', protocol: 'http', repository: 'BookStore-release', version: '1.0.0'                 
+                nexusArtifactUploader artifacts: [[artifactId: 'onlinebookstore-1.0.0', classifier: '', file: 'target/onlinebookstore.war', type: 'war']], credentialsId: 'nexus2', groupId: 'onlinebookstore', nexusUrl: 'localhost:8081/', nexusVersion: 'nexus2', protocol: 'http', repository: 'BookStore-release', version: '1.0.0'
                 }
             }
         }        
