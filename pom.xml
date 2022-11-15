@@ -81,7 +81,7 @@
     </snapshotRepository>
     <repository>
       <id>NexusMavenDeployment</id>
-      <url>http://localhost:8081/repository/Mavenproject/</url>
+      <url>http://localhost:8081/repository/MavenRelease/</url>
     </repository>
   </distributionManagement>	
   
